@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The hotel is a single-page experience with section anchors because its supplied content describes one continuous booking journey.
+- Booking requests use prefilled WhatsApp links instead of local persistence because the hotel handles confirmation directly by message.
