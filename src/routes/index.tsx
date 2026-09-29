@@ -48,7 +48,7 @@ const headingClass = "font-display text-5xl leading-[0.98] font-medium md:text-6
 
 function Brand({ light = false }: { light?: boolean }) {
   return <a href="#home" className={`inline-flex shrink-0 items-center gap-2.5 ${light ? "text-primary-foreground" : "text-forest-deep"}`} aria-label="Hotel DRB Marthandam home">
-    <span className="grid size-9 place-items-center border border-current/40 font-display text-[27px] leading-none font-semibold">D</span>
+    <img src={logo.url} alt="Hotel DRB logo" className={light ? "h-10 w-auto bg-paper p-1.5" : "h-10 w-auto"} />
     <span className="flex flex-col leading-none"><strong className="text-[17px] font-bold tracking-[0.12em]">HOTEL DRB</strong><span className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.32em] ${light ? "text-gold" : "text-primary"}`}>Marthandam</span></span>
   </a>;
 }
