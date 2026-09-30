@@ -5,11 +5,8 @@ import { Button } from "@/components/ui/button";
 const building = "/assets/hotel-building-cutout.png";
 const buildingOriginal = "/assets/image.png";
 const logo = "/assets/c8f74745-ee84-46df-83c8-cd37378621ab-removebg-preview.png";
-const room1 = "/assets/divines-business-hotel-kuzhittura-pic-1.jfif";
 const room3 = "/assets/divines-business-hotel-kuzhittura-pic-3.jfif";
-const room4 = "/assets/divines-business-hotel-kuzhittura-pic-4.jfif";
 const room5 = "/assets/divines-business-hotel-kuzhittura-pic-5.jfif";
-const room6 = "/assets/divines-business-hotel-kuzhittura-pic-6.jfif";
 const room7 = "/assets/divines-business-hotel-kuzhittura-pic-7.jfif";
 const room8 = "/assets/divines-business-hotel-kuzhittura-pic-8.jfif";
 const room9 = "/assets/divines-business-hotel-kuzhittura-pic-9.jfif";
@@ -19,9 +16,9 @@ const room12 = "/assets/divines-business-hotel-kuzhittura-pic-12.jfif";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Hotel DRB Marthandam | Comfortable Rooms from ₹700" },
-    { name: "description", content: "Stay at Hotel DRB on Market Road, Marthandam. Explore AC, non-AC, deluxe and suite rooms from ₹700 and book directly on WhatsApp." },
-    { property: "og:title", content: "Hotel DRB Marthandam | Comfortable Rooms from ₹700" },
+    { title: "Hotel DRB Marthandam | Comfortable Rooms from ₹1,000" },
+    { name: "description", content: "Stay at Hotel DRB on Market Road, Marthandam. Explore AC, non-AC, deluxe and suite rooms from ₹1,000 and book directly on WhatsApp." },
+    { property: "og:title", content: "Hotel DRB Marthandam | Comfortable Rooms from ₹1,000" },
     { property: "og:description", content: "Comfortable rooms, convenient location and direct booking at Hotel DRB Marthandam." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -30,11 +27,10 @@ export const Route = createFileRoute("/")({
 });
 
 const rooms = [
-  { name: "Double Bed Non AC", price: 700, description: "A practical and affordable accommodation option for guests looking for a simple stay.", tags: ["Double Bed", "Non AC"], image: room1 },
   { name: "Double Bed Non AC Standard", price: 1000, description: "A standard non-AC room offering a comfortable option for couples and individual travellers.", tags: ["Double Bed", "Non AC"], image: room3 },
-  { name: "3 Bed Non AC", price: 1300, description: "A convenient choice for families and small groups requiring three-bed accommodation.", tags: ["3 Beds", "Non AC"], image: room4 },
+  { name: "3 Bed Non AC", price: 1300, description: "A convenient choice for families and small groups requiring three-bed accommodation.", tags: ["3 Beds", "Non AC"], image: "/assets/room-3bed-nonac.png" },
   { name: "Double Bed Standard AC", price: 1600, description: "A comfortable air-conditioned room for guests who prefer an AC stay at a practical price.", tags: ["Double Bed", "AC"], image: room5 },
-  { name: "Double Bed Deluxe AC", price: 2200, description: "An upgraded AC room for guests looking for additional comfort during their stay.", tags: ["Double Bed", "AC", "Deluxe"], image: room6 },
+  { name: "Double Bed Deluxe AC", price: 2200, description: "An upgraded AC room for guests looking for additional comfort during their stay.", tags: ["Double Bed", "AC", "Deluxe"], image: "/assets/room-deluxe-ac.png" },
   { name: "Suite Room", price: 3200, description: "Our premium room option for guests looking for a more spacious and comfortable stay.", tags: ["Suite", "AC", "Premium"], image: room9 },
 ];
 const nav = [{label:"Home", href:"#home"}, {label:"Rooms", href:"#rooms"}, {label:"About Us", href:"#about"}, {label:"Location", href:"#location"}, {label:"Book Now", href:"#booking"}];
