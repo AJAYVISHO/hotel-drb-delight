@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 const building = "/assets/hotel-building-cutout.png";
 const buildingOriginal = "/assets/image.png";
 const logo = "/assets/c8f74745-ee84-46df-83c8-cd37378621ab-removebg-preview.png";
-const room3 = "/assets/divines-business-hotel-kuzhittura-pic-3.jfif";
-const room5 = "/assets/divines-business-hotel-kuzhittura-pic-5.jfif";
+const roomNonACStandard = "/assets/room-nonac-standard.jpg";
+const roomStandardACTV = "/assets/room-standard-ac-tv.png";
+const galleryRoomNonAC = "/assets/divines-business-hotel-kuzhittura-pic-3.jfif";
+const galleryRoomAC = "/assets/divines-business-hotel-kuzhittura-pic-5.jfif";
 const room7 = "/assets/divines-business-hotel-kuzhittura-pic-7.jfif";
 const room8 = "/assets/divines-business-hotel-kuzhittura-pic-8.jfif";
 const room9 = "/assets/divines-business-hotel-kuzhittura-pic-9.jfif";
@@ -27,9 +29,9 @@ export const Route = createFileRoute("/")({
 });
 
 const rooms = [
-  { name: "Double Bed Non AC Standard", price: 1000, description: "A standard non-AC room offering a comfortable option for couples and individual travellers.", tags: ["Double Bed", "Non AC"], image: room3 },
+  { name: "Double Bed Non AC Standard", price: 1000, description: "A standard non-AC room offering a comfortable option for couples and individual travellers.", tags: ["Double Bed", "Non AC"], image: roomNonACStandard },
   { name: "3 Bed Non AC", price: 1300, description: "A convenient choice for families and small groups requiring three-bed accommodation.", tags: ["3 Beds", "Non AC"], image: "/assets/room-3bed-nonac.png" },
-  { name: "Double Bed Standard AC", price: 1600, description: "A comfortable air-conditioned room for guests who prefer an AC stay at a practical price.", tags: ["Double Bed", "AC"], image: room5 },
+  { name: "Double Bed Standard AC", price: 1600, description: "A comfortable air-conditioned room for guests who prefer an AC stay at a practical price.", tags: ["Double Bed", "AC"], image: roomStandardACTV },
   { name: "Double Bed Deluxe AC", price: 2200, description: "An upgraded AC room for guests looking for additional comfort during their stay.", tags: ["Double Bed", "AC", "Deluxe"], image: "/assets/room-deluxe-ac.png" },
   { name: "Suite Room", price: 3200, description: "Our premium room option for guests looking for a more spacious and comfortable stay.", tags: ["Suite", "AC", "Premium"], image: room9 },
 ];
@@ -95,7 +97,7 @@ function Index() {
         {icon:Phone,title:"Easy Direct Booking",text:"Check availability and reserve your room directly by calling our hotel or messaging us on WhatsApp."},
       ].map((item,i) => <div key={item.title} className="border-t border-border pt-6"><div className="flex items-start justify-between"><item.icon className="size-7 stroke-[1.5] text-primary" /><span className="text-xs text-muted-foreground/60">0{i+1}</span></div><h3 className="mt-8 font-display text-2xl font-semibold text-forest-deep">{item.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p></div>)}</div></div></section>
 
-      <section className="grid sm:grid-cols-2 lg:grid-cols-3"><img src={room10} alt="Double bedroom at Hotel DRB" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={room12} alt="Sitting area at Hotel DRB with sofa and desk" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={buildingOriginal} alt="Exterior of Hotel DRB Marthandam" className="h-72 w-full bg-secondary object-contain sm:col-span-2 lg:col-span-1 md:h-[420px]" loading="lazy" /></section>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"><img src={room10} alt="Double bedroom at Hotel DRB" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={galleryRoomNonAC} alt="Standard non-AC room at Hotel DRB" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={room12} alt="Sitting area at Hotel DRB with sofa and desk" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={galleryRoomAC} alt="Standard air-conditioned room at Hotel DRB" className="h-72 w-full object-cover md:h-[420px]" loading="lazy" /><img src={buildingOriginal} alt="Exterior of Hotel DRB Marthandam" className="h-72 w-full object-cover sm:col-span-2 md:h-[420px] lg:col-span-2" loading="lazy" /></section>
 
       <section className="bg-paper py-20 md:py-28"><div className="mx-auto max-w-7xl px-5 lg:px-8"><SectionIntro eyebrow="Who we welcome" title="Whatever Brings You to Marthandam" /><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{[
         ["Families","Comfortable room choices for family stays and visits."], ["Couples","Double-bed accommodation for a convenient stay."], ["Business Travellers","Practical accommodation for business and work-related travel."], ["Groups","Three-bed accommodation and larger room options for small groups."], ["Short-Stay Travellers","Affordable options for overnight stays and stopovers."],
