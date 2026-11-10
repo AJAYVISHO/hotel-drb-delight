@@ -29,10 +29,10 @@ const restaurantDining = "/assets/salem-rr-dining.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Hotel DRB Marthandam | Comfortable Rooms from ₹1,000" },
-    { name: "description", content: "Stay at Hotel DRB on Market Road, Marthandam. Explore AC, non-AC, deluxe and suite rooms from ₹1,000 and book directly on WhatsApp." },
-    { property: "og:title", content: "Hotel DRB Marthandam | Comfortable Rooms from ₹1,000" },
-    { property: "og:description", content: "Comfortable rooms, convenient location and direct booking at Hotel DRB Marthandam." },
+    { title: "Hotel DRB Marthandam | Rooms, Salem RR Restaurant & Bakery" },
+    { name: "description", content: "Explore comfortable rooms, Salem RR Restaurant & Bakery, and direct WhatsApp booking at Hotel DRB, Marthandam." },
+    { property: "og:title", content: "Hotel DRB Marthandam | Rooms, Salem RR Restaurant & Bakery" },
+    { property: "og:description", content: "Comfortable stays, Salem RR Restaurant & Bakery, and easy direct booking in Marthandam." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
