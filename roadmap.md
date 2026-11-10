@@ -1,6 +1,9 @@
 # Tasks
 - [x] Replace the Suite Room photo with the supplied photo.
-- [x] Display the 50-meter Marthandam Flyover distance in Location.
-- [x] Confirm Vercel serves the old Suite Room photo and omits the new landmark distance.
-- [ ] Update Vercel production from the latest project code (requires the user's Vercel deployment access).
-- [ ] Add the flyover photo when the user supplies it (only Suite Room photo attached).
+- [x] Display the 50-meter Marthandam Flyover distance and supplied photo in Location.
+- [x] Confirm Vercel serves an older deployment.
+- [ ] Publish the latest site to Vercel (requires the user's deployment access).
+- [ ] Refresh the hotel site while keeping all five room-card images unchanged.
+- [ ] Feature Salem RR Restaurant & Bakery and the supplied property, dining, and bakery photos.
+- [ ] Make WhatsApp booking highly visible across desktop and mobile.
+- [ ] Verify the refreshed experience and booking links in the preview.
