@@ -13,3 +13,4 @@
 - Booking requests use prefilled WhatsApp links instead of local persistence because the hotel handles confirmation directly by message.
 - Hotel image files are intentionally source-controlled in public/assets so deployments outside Lovable can serve them without Lovable's asset proxy.
 - Location facts live in a browser-safe data module so the distance can be tested independently of presentation.
+- Keep room-selection card images stable; use supporting property and restaurant photos in separate sections so room imagery stays recognizable.
