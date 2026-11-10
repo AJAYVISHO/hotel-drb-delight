@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, ArrowUpRight, BedDouble, Compass, MapPin, Menu, Phone, Send, Snowflake, Sparkles, Users, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BedDouble, Compass, MapPin, Menu, MessageCircle, Phone, Send, Snowflake, Sparkles, UtensilsCrossed, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hotelLocation } from "@/lib/hotel-location";
 const building = "/assets/hotel-building-cutout.png";
@@ -9,7 +9,7 @@ const logo = "/assets/c8f74745-ee84-46df-83c8-cd37378621ab-removebg-preview.png"
 const roomNonACStandard = "/assets/room-nonac-standard.jpg";
 const roomStandardACTV = "/assets/room-standard-ac-tv.png";
 const galleryRoomNonAC = "/assets/divines-business-hotel-kuzhittura-pic-3.jfif";
-const flyover = "/assets/marthandam-flyover.png";
+const flyover = "/assets/marthandam-flyover-new.png";
 const galleryRoomAC = "/assets/divines-business-hotel-kuzhittura-pic-5.jfif";
 const room7 = "/assets/divines-business-hotel-kuzhittura-pic-7.jfif";
 const room8 = "/assets/divines-business-hotel-kuzhittura-pic-8.jfif";
@@ -17,6 +17,15 @@ const roomSuite = "/assets/suite-room.jpg";
 const room10 = "/assets/divines-business-hotel-kuzhittura-pic-10.jfif";
 const room11 = "/assets/divines-business-hotel-kuzhittura-pic-11.jfif";
 const room12 = "/assets/divines-business-hotel-kuzhittura-pic-12.jfif";
+const hotelArrival = "/assets/salem-rr-storefront.png";
+const hotelGuestRoom = "/assets/hotel-guest-room.webp";
+const hotelTwinRoom = "/assets/hotel-guest-room-twin.webp";
+const hotelBathroom = "/assets/hotel-bathroom.webp";
+const hotelCurtainRoom = "/assets/hotel-room-curtains.webp";
+const restaurantFacade = "/assets/salem-rr-entrance.webp";
+const bakeryDisplay = "/assets/salem-rr-bakery.webp";
+const restaurantHall = "/assets/salem-rr-banquet.webp";
+const restaurantDining = "/assets/salem-rr-dining.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -37,7 +46,7 @@ const rooms = [
   { name: "Double Bed Deluxe AC", price: 2200, description: "An upgraded AC room for guests looking for additional comfort during their stay.", tags: ["Double Bed", "AC", "Deluxe"], image: "/assets/room-deluxe-ac.png" },
   { name: "Suite Room", price: 3200, description: "Our premium room option for guests looking for a more spacious and comfortable stay.", tags: ["Suite", "AC", "Premium"], image: roomSuite },
 ];
-const nav = [{label:"Home", href:"#home"}, {label:"Rooms", href:"#rooms"}, {label:"About Us", href:"#about"}, {label:"Location", href:"#location"}, {label:"Book Now", href:"#booking"}];
+const nav = [{label:"Home", href:"#home"}, {label:"Rooms", href:"#rooms"}, {label:"About Us", href:"#about"}, {label:"Restaurant", href:"#restaurant"}, {label:"Location", href:"#location"}, {label:"Book Now", href:"#booking"}];
 const wa = (text: string) => `https://wa.me/919442501809?text=${encodeURIComponent(text)}`;
 const generalBooking = wa("Hello Hotel DRB, I would like to check room availability and book a stay. Please share the details.");
 const roomBooking = (name: string, price: number) => wa(`Hello Hotel DRB, I would like to book the ${name} room (starting at ₹${price.toLocaleString("en-IN")}/night). Please confirm availability and the current rate.`);
@@ -53,7 +62,7 @@ function Brand({ light = false }: { light?: boolean }) {
   </a>;
 }
 function WhatsAppButton({ text, href = generalBooking, variant = "default", className = "" }: { text: string; href?: string; variant?: "default" | "outline" | "secondary"; className?: string }) {
-  return <Button asChild variant={variant} size="lg" className={`h-12 rounded-none px-6 text-[11px] font-bold uppercase tracking-[0.13em] ${className}`}><a href={href} target="_blank" rel="noopener noreferrer">{text}<ArrowUpRight className="ml-2" /></a></Button>;
+  return <Button asChild variant={variant} size="lg" className={`h-12 rounded-none px-6 text-[11px] font-bold uppercase tracking-[0.13em] ${className}`}><a href={href} target="_blank" rel="noopener noreferrer"><MessageCircle className="mr-2 size-4" />{text}<ArrowUpRight className="ml-2" /></a></Button>;
 }
 function SectionIntro({ eyebrow, title, description, center = false }: { eyebrow:string; title:string; description?:string; center?:boolean }) {
   return <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}><span className={labelClass}>{eyebrow}</span><h2 className={`${headingClass} mt-4 text-forest-deep`}>{title}</h2>{description && <p className="mt-5 text-sm leading-7 text-muted-foreground md:text-base">{description}</p>}</div>;
@@ -69,9 +78,9 @@ function Index() {
     window.open(wa(details), "_blank", "noopener,noreferrer");
   }
   return <div className="overflow-x-hidden">
-    <header className="relative z-30 bg-paper">
+    <header className="sticky top-0 z-30 bg-paper/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto grid h-[76px] max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:flex lg:justify-between lg:px-8"><Brand /><nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">{nav.map(n => <a key={n.label} href={n.href} className="text-[12px] font-semibold uppercase tracking-[0.09em] text-foreground transition-colors hover:text-primary">{n.label}</a>)}</nav><div className="flex shrink-0 items-center gap-3"><WhatsAppButton text="Book Now" className="hidden h-10 px-5 lg:inline-flex" /><Button variant="ghost" size="icon" className="size-10 rounded-none border border-border lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</Button></div></div>
-      {menuOpen && <div className="absolute left-0 top-full w-full border-t border-border bg-paper px-5 pb-7 shadow-xl lg:hidden"><nav className="flex flex-col" aria-label="Mobile navigation">{nav.map((n,i) => <a key={n.label} href={n.href} onClick={() => setMenuOpen(false)} className="flex items-center justify-between border-b border-border py-4 text-base font-semibold text-forest-deep"><span><span className="mr-4 text-xs text-primary/60">0{i+1}</span>{n.label}</span><ArrowUpRight className="size-4 text-primary" /></a>)}</nav><div className="mt-6 grid grid-cols-2 gap-3"><a href="tel:04651270302" className="text-xs font-semibold text-primary">04651 270 302</a><a href="tel:+919442501809" className="text-xs font-semibold text-primary">+91 94425 01809</a></div><WhatsAppButton text="Book on WhatsApp" className="mt-6 w-full" /></div>}
+      {menuOpen && <div className="absolute left-0 top-full w-full border-t border-border bg-paper px-5 pb-7 shadow-xl lg:hidden"><nav className="flex flex-col" aria-label="Mobile navigation">{nav.map((n,i) => <a key={n.label} href={n.href} onClick={() => setMenuOpen(false)} className="flex items-center justify-between border-b border-border py-4 text-base font-semibold text-forest-deep"><span><span className="mr-4 text-xs text-primary/60">0{i+1}</span>{n.label}</span><ArrowUpRight className="size-4 text-primary" /></a>)}</nav><div className="mt-6 grid grid-cols-2 gap-3"><a href="tel:04651270302" className="text-xs font-semibold text-primary">04651 270 302</a><a href="tel:+919442501809" className="text-xs font-semibold text-primary">+91 94425 01809</a></div><WhatsAppButton text="Book on WhatsApp" className="mt-6 w-full bg-whatsapp text-primary-foreground hover:bg-whatsapp/90" /></div>}
     </header>
 
     <main>
@@ -80,7 +89,7 @@ function Index() {
         <div className="pointer-events-none absolute right-[-30%] top-[-150px] h-[420px] w-[125%] rounded-[0_0_0_70%] border-b-[3px] border-gold/70 sm:right-[-12%] sm:w-[78%] lg:bottom-[-22%] lg:right-[-11%] lg:top-[-22%] lg:h-auto lg:w-[69%] lg:rounded-[50%] lg:border-[3px]" />
         <div className="pointer-events-none absolute right-[-32%] top-[-175px] h-[455px] w-[140%] rounded-[0_0_0_70%] border-b border-gold/45 sm:right-[-15%] sm:w-[82%] lg:bottom-[-32%] lg:right-[-17%] lg:top-[-32%] lg:h-auto lg:w-[77%] lg:rounded-[50%] lg:border" />
         <img src={building} alt="Hotel DRB building in Marthandam" className="pointer-events-none absolute right-[-14px] top-[-11px] h-[285px] w-[335px] object-contain object-top drop-shadow-xl sm:right-[2%] sm:h-[375px] sm:w-[420px] lg:right-[2%] lg:top-[2%] lg:h-[90%] lg:w-[49%]" />
-        <div className="relative mx-auto flex max-w-7xl flex-col justify-end px-5 pb-8 pt-[275px] sm:pt-[365px] lg:min-h-[660px] lg:justify-center lg:px-8 lg:pb-24 lg:pt-0"><div className="max-w-[575px] lg:w-[52%]"><span className={labelClass}>Welcome to Hotel DRB <span className="mx-2 inline-block h-px w-5 align-middle bg-gold" /> Marthandam</span><h1 className="mt-3 font-display text-[43px] leading-[0.96] font-medium sm:text-6xl lg:mt-5 lg:text-[76px]">A Comfortable Stay <em className="font-normal text-primary">in the Heart</em> of Marthandam</h1><p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground sm:mt-5 sm:text-base sm:leading-7">Thoughtful comfort, welcoming rooms, and a convenient place to call home while you’re here.</p><div className="mt-5 flex flex-wrap gap-2 sm:mt-8 sm:gap-3"><WhatsAppButton text="Book Your Room" className="px-4 sm:px-6" /><Button asChild variant="outline" size="lg" className="h-12 rounded-none border-primary bg-transparent px-4 text-[11px] font-bold uppercase tracking-[0.13em] text-primary hover:bg-primary hover:text-primary-foreground sm:px-6"><a href="tel:04651270302"><Phone className="mr-2 size-3.5" />Call Now</a></Button></div></div></div>
+        <div className="relative mx-auto flex max-w-7xl flex-col justify-end px-5 pb-8 pt-[275px] sm:pt-[365px] lg:min-h-[660px] lg:justify-center lg:px-8 lg:pb-24 lg:pt-0"><div className="max-w-[575px] lg:w-[52%]"><span className={labelClass}>Welcome to Hotel DRB <span className="mx-2 inline-block h-px w-5 align-middle bg-gold" /> Marthandam</span><h1 className="mt-3 font-display text-[43px] leading-[0.96] font-medium sm:text-6xl lg:mt-5 lg:text-[76px]">A Comfortable Stay <em className="font-normal text-primary">in the Heart</em> of Marthandam</h1><p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground sm:mt-5 sm:text-base sm:leading-7">Thoughtful comfort, welcoming rooms, and a convenient place to call home while you’re here.</p><div className="mt-5 flex flex-wrap gap-2 sm:mt-8 sm:gap-3"><WhatsAppButton text="Book on WhatsApp" className="bg-whatsapp px-4 text-primary-foreground shadow-md hover:bg-whatsapp/90 sm:px-6" /><Button asChild variant="outline" size="lg" className="h-12 rounded-none border-primary bg-transparent px-4 text-[11px] font-bold uppercase tracking-[0.13em] text-primary hover:bg-primary hover:text-primary-foreground sm:px-6"><a href="tel:04651270302"><Phone className="mr-2 size-3.5" />Call Now</a></Button></div><p className="mt-3 text-xs font-medium text-muted-foreground">Choose your room and send your booking request directly to us.</p></div></div>
         <div className="relative z-10 border-t border-border bg-paper/95"><div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-border px-5 lg:px-8"><div className="py-3 pr-2 sm:py-5"><strong className="block font-display text-xl leading-none text-primary sm:text-3xl">₹1,000 <span className="text-sm sm:text-base">onwards</span></strong><span className="mt-1 block text-[9px] uppercase tracking-[0.1em] text-muted-foreground sm:text-[11px]">Affordable rooms</span></div><div className="px-3 py-3 sm:px-8 sm:py-5"><strong className="block font-display text-xl leading-none text-primary sm:text-3xl">5 Room Types</strong><span className="mt-1 block text-[9px] uppercase tracking-[0.1em] text-muted-foreground sm:text-[11px]">Choose your stay</span></div><div className="py-3 pl-3 sm:py-5 sm:pl-8"><strong className="block font-display text-xl leading-none text-primary sm:text-3xl">Marthandam</strong><span className="mt-1 block text-[9px] uppercase tracking-[0.1em] text-muted-foreground sm:text-[11px]">Tamil Nadu</span></div></div></div>
       </section>
 
