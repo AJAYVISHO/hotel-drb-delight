@@ -32,18 +32,18 @@
   --font-body: "DM Sans", sans-serif;
 }
 :root {
-  --background: oklch(0.98 0.008 88);
+  --background: oklch(0.985 0.004 145);
   --foreground: oklch(0.23 0.025 160);
   --primary: oklch(0.33 0.07 164);
   --primary-foreground: oklch(0.98 0.008 88);
-  --secondary: oklch(0.93 0.025 86);
+  --secondary: oklch(0.95 0.008 145);
   --secondary-foreground: oklch(0.28 0.05 160);
-  --muted: oklch(0.94 0.012 83);
+  --muted: oklch(0.95 0.005 145);
   --muted-foreground: oklch(0.48 0.018 145);
   --accent: oklch(0.79 0.12 83);
   --accent-foreground: oklch(0.23 0.025 160);
-  --border: oklch(0.86 0.018 85);
-  --input: oklch(0.86 0.018 85);
+  --border: oklch(0.88 0.008 145);
+  --input: oklch(0.88 0.008 145);
   --ring: oklch(0.67 0.11 85);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.23 0.025 160);
@@ -54,8 +54,8 @@
   --forest: oklch(0.26 0.055 164);
   --forest-deep: oklch(0.19 0.038 163);
   --gold: oklch(0.8 0.12 83);
-  --warm: oklch(0.92 0.026 80);
-  --paper: oklch(0.99 0.005 85);
+  --warm: oklch(0.95 0.008 145);
+  --paper: oklch(1 0 0);
   --whatsapp: oklch(0.52 0.16 148);
 }
 @layer base {
