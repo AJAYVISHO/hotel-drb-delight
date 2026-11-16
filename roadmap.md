@@ -6,4 +6,4 @@
 - [x] Refresh the hotel site while keeping all five room-card images unchanged.
 - [x] Feature Salem RR Restaurant & Bakery and the supplied property, dining, and bakery photos.
 - [x] Make WhatsApp booking highly visible across desktop and mobile.
-- [ ] Verify the refreshed experience and booking links in the preview.
+- [x] Verify the refreshed experience and booking links in the preview.
