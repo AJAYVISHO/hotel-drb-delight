@@ -7,3 +7,4 @@
 - [x] Feature Salem RR Restaurant & Bakery and the supplied property, dining, and bakery photos.
 - [x] Make WhatsApp booking highly visible across desktop and mobile.
 - [x] Verify the refreshed experience and booking links in the preview.
+- [x] Add the supplied hotel front-angle photo to the hero carousel and add the three supplied event-hall photos below the party-hall feature.
